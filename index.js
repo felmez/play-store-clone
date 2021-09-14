@@ -1,7 +1,7 @@
 const { ApolloServer } = require('apollo-server');
 const mongoose = require('mongoose');
 
-const types = require('./graphql/types');
+const typeDefs = require('./graphql/types');
 const resolvers = require('./graphql/resolvers/')
 const { MONGODB } = require('./config.js'); /*use this for localhost serving*/
 
@@ -10,7 +10,7 @@ const URI = MONGODB; /*process.env.MONGODB_URI*/
 
 
 const server = new ApolloServer({
-    types,
+    typeDefs,
     resolvers,
     context: ({ req }) => ({ req })
 })
@@ -24,4 +24,4 @@ mongoose.connect(URI, {
     return server.listen({ port: PORT });
 }).then((res) => {
     console.log(`Server running at ${res.url}`);
-}).catch(err => console.log(err.reason));
+}).catch(err => console.log(err.message));
