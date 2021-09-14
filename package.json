@@ -1,0 +1,40 @@
+{
+  "name": "play-store-clone",
+  "version": "1.0.0",
+  "description": "mern based play store app",
+  "main": "index.js",
+  "scripts": {
+    "serve": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felmez/play-store-clone.git"
+  },
+  "keywords": [
+    "react",
+    "graphql",
+    "mongodb",
+    "nodejs",
+    "express",
+    "mern",
+    "bcryptjs"
+  ],
+  "author": "souhaib felmez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/felmez/play-store-clone/issues"
+  },
+  "homepage": "https://github.com/felmez/play-store-clone#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "apollo-server": "^3.3.0",
+    "bcrypt": "^5.0.1",
+    "graphql": "^15.5.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.5"
+  }
+}
