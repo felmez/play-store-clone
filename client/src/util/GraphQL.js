@@ -7,7 +7,7 @@ export const FETCH_APPS_QUERY = gql`
             username
             body
             createdAt
-            commentsCount
+            reviewsCount
         }
     }
 `;

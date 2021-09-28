@@ -5,13 +5,13 @@ const tokenCheck = require('../../util/tokenCheck');
 
 module.exports = {
     Mutation: {
-        createComment: async (_, { appID, body }, context) => {
+        createReview: async (_, { appID, body }, context) => {
             const { username } = tokenCheck(context);
 
             if (body.trim() === '') {
-                throw new UserInputError('Empty comment', {
+                throw new UserInputError('Empty review', {
                     errors: {
-                        body: 'Comment body must not be empty'
+                        body: 'Review body must not be empty'
                     }
                 })
             }
@@ -19,7 +19,7 @@ module.exports = {
             const app = await App.findById(appID);
 
             if (app) {
-                app.comments.unshift({
+                app.reviews.unshift({
                     username,
                     body,
                     createdAt: new Date().toISOString()
@@ -30,15 +30,15 @@ module.exports = {
                 throw new UserInputError('App not found');
             }
         },
-        deleteComment: async (_, { appID, commentID }, context) => {
+        deleteReview: async (_, { appID, reviewID }, context) => {
             const { username } = tokenCheck(context);
             const app = await App.findById(appID);
 
             if (app) {
-                const commentIndex = app.comments.findIndex(comment => comment.id === commentID);
+                const reviewIndex = app.reviews.findIndex(review => review.id === reviewID);
 
-                if (app.comments[commentIndex].username === username) {
-                    app.comments.splice(commentIndex, 1);
+                if (app.reviews[reviewIndex].username === username) {
+                    app.reviews.splice(reviewIndex, 1);
                     await app.save();
                     return app;
                 } else {

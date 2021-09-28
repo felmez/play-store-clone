@@ -13,7 +13,7 @@ export default function Home() {
     const { loading, data: { getApps: apps } = {} } = useQuery(FETCH_APPS_QUERY);
 
     return (
-        <Grid columns={3}>
+        <Grid columns={10}>
             <Grid.Row className="page-title">
                 <h1>Top selling movies</h1>
             </Grid.Row>

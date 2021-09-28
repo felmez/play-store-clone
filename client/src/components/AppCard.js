@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
-import { Card, Icon, Label, Button, Image } from 'semantic-ui-react'
+import { Card, Icon, Image } from 'semantic-ui-react'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 
 import { AuthContext } from '../context/auth'
 
 
-export default function AppCard({ app: { id, username, body, createdAt, commentsCount } }) {
+export default function AppCard({ app: { id, username, body, createdAt, reviewsCount } }) {
     const { user } = useContext(AuthContext);
 
     return (
@@ -20,10 +20,8 @@ export default function AppCard({ app: { id, username, body, createdAt, comments
                 </Card.Description>
             </Card.Content>
             <Card.Content extra>
-                <a>
-                    <Icon name='star' />
-                    {commentsCount} Comments
-                </a>
+                <Icon name='star' />
+                {reviewsCount} Reviews
             </Card.Content>
         </Card>
     )

@@ -1,0 +1,8 @@
+.ui.grid>.row {
+  left: 170px;
+}
+
+.form-container {
+  width: 400px;
+  margin: auto;
+}

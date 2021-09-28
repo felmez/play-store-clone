@@ -1,10 +1,10 @@
 const appsResolvers = require('./apps');
 const usersResolvers = require('./users');
-const commentsResolvers = require('./comments');
+const reviewsResolvers = require('./reviews');
 
 module.exports = {
     App: {
-        commentsCount: (parent) => parent.comments.length
+        reviewsCount: (parent) => parent.reviews.length
     },
     Query: {
         ...appsResolvers.Query
@@ -12,6 +12,6 @@ module.exports = {
     Mutation: {
         ...usersResolvers.Mutation,
         ...appsResolvers.Mutation,
-        ...commentsResolvers.Mutation
+        ...reviewsResolvers.Mutation
     }
 };
