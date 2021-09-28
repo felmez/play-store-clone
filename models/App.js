@@ -1,10 +1,12 @@
 const { model, Schema } = require('mongoose');
 
 const appSchema = new Schema({
+    name: String,
     username: String,
     body: String,
     createdAt: String,
-    comments: [{
+    reviewsCount: String,
+    reviews: [{
         body: String,
         username: String,
         createdAt: String

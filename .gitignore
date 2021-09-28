@@ -120,3 +120,4 @@ config.js
 !.vscode/extensions.json
 *.code-workspace
 .vscode/settings.json
+client/.vscode/settings.json

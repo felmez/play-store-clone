@@ -1,20 +1,22 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Header, Icon, Image, Menu, Segment, Sidebar, Container } from 'semantic-ui-react'
+import { Icon, Menu, Sidebar } from 'semantic-ui-react'
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
 
 import { AuthProvider } from './context/auth';
+import AuthRoute from './util/AuthRoute';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-
-
+import Login from './pages/Login';
+import Register from './pages/Register';
+import SingleApp from './pages/SingleApp'
 
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Navbar />
-        <Sidebar.Pushable as={Segment}>
+        <Sidebar.Pushable attached="bottom">
           <Sidebar
             as={Menu}
             animation='overlay'
@@ -37,17 +39,13 @@ function App() {
               Channels
             </Menu.Item>
           </Sidebar>
-
           <Sidebar.Pusher>
-            <Container>
-
-              <Segment basic>
-                <Route exact path='/' component={Home} />
-              </Segment>
-            </Container>
+            <Route exact path='/' component={Home} />
+            <AuthRoute exact path='/login' component={Login} />
+            <AuthRoute exact path='/register' component={Register} />
+            <Route exact path='/apps/:appID' component={SingleApp} />
           </Sidebar.Pusher>
         </Sidebar.Pushable>
-
       </Router>
     </AuthProvider>
   );

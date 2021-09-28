@@ -22,8 +22,8 @@ const CREATE_APP_MUTATION = gql`
                 username
                 createdAt
             }
-            commentsCount
-            comments{
+            reviewsCount
+            reviews{
                 id
                 username
                 body

@@ -6,9 +6,9 @@ module.exports = gql`
         username: String!
         body: String!
         createdAt: String!
-        commentsCount: Int!
+        reviewsCount: Int!
     }
-    type Comment{
+    type Review{
         id: ID!
         username: String!
         body: String!
@@ -23,6 +23,7 @@ module.exports = gql`
         id: ID!
         username: String!
         email: String!
+        token: String!
         createdAt: String!
     }
     input RegisterInput{
@@ -40,8 +41,8 @@ module.exports = gql`
         login(username: String!, password: String!): User!
         createApp(body: String!): App!
         deleteApp(appID: ID!): String!
-        createComment(appID: ID!, body: String!): App!
-        deleteComment(appID: ID!, commentID: ID!): App!
+        createReview(appID: ID!, body: String!): App!
+        deleteReview(appID: ID!, reviewID: ID!): App!
         likeApp(appID: ID!): App!
     }
 `
