@@ -14,6 +14,7 @@ const FETCH_APP_QUERY = gql`
             appID: $appID
         ){
             id
+            name
             username
             body
             reviewsCount

@@ -5,7 +5,6 @@ const appSchema = new Schema({
     username: String,
     body: String,
     createdAt: String,
-    reviewsCount: String,
     reviews: [{
         body: String,
         username: String,
