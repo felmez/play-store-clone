@@ -27,7 +27,7 @@ module.exports = {
         }
     },
     Mutation: {
-        async createApp(_, { body }, context) {
+        async createApp(_, { body, name }, context) {
             const user = tokenCheck(context);
 
             if (body.trim() === '') {
@@ -38,10 +38,19 @@ module.exports = {
                 })
             }
 
+            if (name.trim() === '') {
+                throw new UserInputError('Empty Name', {
+                    errors: {
+                        name: 'App name must not be empty'
+                    }
+                })
+            }
+
             const newApp = new App({
                 user: user.id,
                 username: user.username,
                 body,
+                name,
                 createdAt: new Date().toISOString()
             });
 
@@ -62,27 +71,6 @@ module.exports = {
                 }
             } catch (err) {
                 throw new Error(err);
-            }
-        },
-        async likeApp(_, { appID }, context) {
-            const { username } = tokenCheck(context);
-            const app = await App.findById(appID);
-
-            if (app) {
-                if (app.likes.find(like => like.username === username)) {
-                    // app liked, unlike it
-                    app.likes = app.likes.filter(like => like.username !== username);
-                } else {
-                    // app not liked, like it
-                    app.likes.push({
-                        username,
-                        createdAt: new Date().toISOString()
-                    })
-                }
-                await app.save();
-                return app;
-            } else {
-                throw new UserInputError('App not found');
             }
         }
     }

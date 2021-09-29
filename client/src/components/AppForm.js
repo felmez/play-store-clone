@@ -10,18 +10,14 @@ import { FETCH_APPS_QUERY } from '../util/GraphQL';
 const CREATE_APP_MUTATION = gql`
     mutation createApp(
         $body: String!
+        $name: String!
     ) {
-        createApp(body: $body){
+        createApp(body: $body, name: $name){
             id
+            name
             username
             body
             createdAt
-            likesCount
-            likes{
-                id
-                username
-                createdAt
-            }
             reviewsCount
             reviews{
                 id
@@ -36,7 +32,8 @@ const CREATE_APP_MUTATION = gql`
 export default function AppForm() {
 
     const { onChange, onSubmit, values } = useForm(createAppCallBack, {
-        body: '',
+        name: '',
+        body: ''
     })
 
     const [createApp] = useMutation(CREATE_APP_MUTATION, {
@@ -51,6 +48,7 @@ export default function AppForm() {
                     getApps: [result.data.createApp, ...data.getApps],
                 },
             });
+            values.name = "";
             values.body = "";
         },
     });
@@ -64,13 +62,19 @@ export default function AppForm() {
             <h1>Create app:</h1>
             <Form.Field>
                 <Form.Input
+                    placeholder="App name"
+                    name="name"
+                    onChange={onChange}
+                    value={values.name}
+                />
+                <Form.Input
                     placeholder="What's happening?"
                     name="body"
                     onChange={onChange}
                     value={values.body}
                 />
-                <Button type="submit" color="teal" disabled={!values.body.trim()}>
-                    App
+                <Button type="submit" color="teal" disabled={!values.name.trim()}>
+                    Submit
                 </Button>
             </Form.Field>
         </Form>
