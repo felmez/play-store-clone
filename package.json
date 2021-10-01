@@ -31,6 +31,7 @@
     "nodemon": "^2.0.12"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "apollo-server": "^3.3.0",
     "bcrypt": "^5.0.1",
     "graphql": "^15.5.3",

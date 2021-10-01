@@ -6,3 +6,19 @@
   width: 400px;
   margin: auto;
 }
+
+.ui.grid {
+  margin: 0 !important;
+}
+
+.ui.card>.image>img, .ui.cards>.card>.image>img {
+  border-radius: 0 !important;
+}
+
+.leftSidebar {
+  width: 100px !important;
+}
+
+.pushable {
+  height: 100vh !important;
+}
