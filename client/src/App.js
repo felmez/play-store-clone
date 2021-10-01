@@ -10,13 +10,14 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import SingleApp from './pages/SingleApp'
+import MyApps from './pages/MyApps'
 
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Navbar />
-        <Sidebar.Pushable attached="bottom">
+        <Sidebar.Pushable attached="bottom" >
           <Sidebar
             as={Menu}
             animation='overlay'
@@ -25,18 +26,19 @@ function App() {
             vertical
             visible
             width='thin'
+            className='leftSidebar'
           >
             <Menu.Item as='a'>
-              <Icon name='home' />
-              Home
+              <Icon name='app store ios' />
+              Apps
             </Menu.Item>
             <Menu.Item as='a'>
-              <Icon name='gamepad' />
-              Games
+              <Icon name='tv' />
+              Movies
             </Menu.Item>
             <Menu.Item as='a'>
-              <Icon name='camera' />
-              Channels
+              <Icon name='book' />
+              Books
             </Menu.Item>
           </Sidebar>
           <Sidebar.Pusher>
@@ -44,6 +46,7 @@ function App() {
             <AuthRoute exact path='/login' component={Login} />
             <AuthRoute exact path='/register' component={Register} />
             <Route exact path='/apps/:appID' component={SingleApp} />
+            <Route exact path='/:username/apps' component={MyApps} />
           </Sidebar.Pusher>
         </Sidebar.Pushable>
       </Router>

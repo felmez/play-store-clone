@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Button } from 'semantic-ui-react'
+import { Form, Button, Modal, Container, Icon } from 'semantic-ui-react'
 import { gql, useMutation } from '@apollo/client';
 
 
@@ -36,6 +36,8 @@ export default function AppForm() {
         body: ''
     })
 
+    const [open, setOpen] = React.useState(false)
+
     const [createApp] = useMutation(CREATE_APP_MUTATION, {
         variables: values,
         update(proxy, result) {
@@ -58,25 +60,40 @@ export default function AppForm() {
     }
 
     return (
-        <Form onSubmit={onSubmit}>
-            <h1>Create app:</h1>
-            <Form.Field>
-                <Form.Input
-                    placeholder="App name"
-                    name="name"
-                    onChange={onChange}
-                    value={values.name}
-                />
-                <Form.Input
-                    placeholder="What's happening?"
-                    name="body"
-                    onChange={onChange}
-                    value={values.body}
-                />
-                <Button type="submit" color="teal" disabled={!values.name.trim()}>
-                    Submit
-                </Button>
-            </Form.Field>
-        </Form>
+        <Modal
+            onClose={() => setOpen(false)}
+            onOpen={() => setOpen(true)}
+            open={open}
+            trigger={<Button color='teal'>
+                <Icon name='plus' /> Submit App
+            </Button>}
+        >
+            <Modal.Header>Create New App</Modal.Header>
+            <Modal.Content>
+                <Container>
+
+
+                    <Form onSubmit={onSubmit}>
+                        <Form.Field>
+                            <Form.Input
+                                placeholder="Name"
+                                name="name"
+                                onChange={onChange}
+                                value={values.name}
+                            />
+                            <Form.Input
+                                placeholder="Description"
+                                name="body"
+                                onChange={onChange}
+                                value={values.body}
+                            />
+                            <Button type="submit" color="teal" disabled={!values.name.trim()}>
+                                Submit
+                            </Button>
+                        </Form.Field>
+                    </Form>
+                </Container>
+            </Modal.Content>
+        </Modal>
     )
 }

@@ -1,9 +1,10 @@
 import React, { useContext, useState, useRef } from 'react';
 import { gql, useQuery, useMutation } from '@apollo/client';
-import { Button, Form, Card, Grid, Image, Icon, Label } from 'semantic-ui-react';
+import { Form, Card, Grid, Image, Container } from 'semantic-ui-react';
 import moment from 'moment';
 
 import { AuthContext } from '../context/auth'
+import DeleteButton from '../components/DeleteButton';
 
 
 const FETCH_APP_QUERY = gql`
@@ -81,6 +82,7 @@ export default function SingleApp(props) {
     } else {
         const {
             id,
+            name,
             username,
             body,
             reviewsCount,
@@ -89,85 +91,78 @@ export default function SingleApp(props) {
         } = getApp;
 
         appMarkup = (
-            <Grid>
-                <Grid.Row>
-                    <Grid.Column width={2}>
-                        <Image
-                            floated='right'
-                            size='small'
-                            src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
-                        />
-                    </Grid.Column>
-                    <Grid.Column width={10}>
-                        <Card fluid>
-                            <Card.Content>
-                                <Card.Header>
-                                    {username}
-                                </Card.Header>
-                                <Card.Meta>
-                                    {moment(createdAt).fromNow()}
-                                </Card.Meta>
-                                <Card.Description>
-                                    {body}
-                                </Card.Description>
-                            </Card.Content>
-                            <hr></hr>
-                            <Card.Content extra>
-                                <Button as="div" labelPosition="right">
-                                    <Button basic color="blue" onClick={() => console.log('review on app')}>
-                                        <Icon name='star' />
-                                    </Button>
-                                    <Label as='a' basic color='blue' pointing='left' /*TODO show reviewers*/>
-                                        {reviewsCount}
-                                    </Label>
-                                </Button>
-                            </Card.Content>
-                        </Card>
-                        {
-                            user &&
+            <Container>
+                <Grid>
+                    <Grid.Row>
+                        <Grid.Column width={2}>
+                            <Image
+                                floated='right'
+                                size='small'
+                                src='https://play-lh.googleusercontent.com/3JYmWnF47XCGW29Rd8KlZ4HyeGn8sKttUv2jAObOhNBIEtSATO_74ozmB28patd9884=s180-rw'
+                            />
+                        </Grid.Column>
+                        <Grid.Column width={10}>
                             <Card fluid>
                                 <Card.Content>
-                                    <p>Post a review</p>
-                                    <Form>
-                                        <div className="ui action input fluid">
-                                            <input
-                                                type="text"
-                                                placeholder="What's up..."
-                                                name="review" value={review}
-                                                onChange={event => setReview(event.target.value)}
-                                                ref={reviewInputRef}
-                                            />
-                                            <button
-                                                type="submit"
-                                                className="ui button teal"
-                                                disabled={review.trim() === ''}
-                                                onClick={createReview}
-                                            >
-                                                Submit
-                                            </button>
-                                        </div>
-                                    </Form>
-                                </Card.Content>
-                            </Card>
-                        }
-                        {reviews.map(review => (
-                            <Card fluid key={review.id}>
-                                <Card.Content>
                                     <Card.Header>
-                                        {review.username}
+                                        {name}
                                     </Card.Header>
                                     <Card.Meta>
-                                        {moment(review.createdAt).fromNow()}
+                                        by {username} {moment(createdAt).fromNow()}
                                     </Card.Meta>
                                     <Card.Description>
-                                        {review.body}
+                                        {body}
                                     </Card.Description>
                                 </Card.Content>
+                                <hr></hr>
                             </Card>
-                        ))}
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid>
+                            {
+                                user &&
+                                <Card fluid>
+                                    <Card.Content>
+                                        <p>Add a review</p>
+                                        <Form>
+                                            <div className="ui action input fluid">
+                                                <input
+                                                    type="text"
+                                                    placeholder="What's up..."
+                                                    name="review" value={review}
+                                                    onChange={event => setReview(event.target.value)}
+                                                    ref={reviewInputRef}
+                                                />
+                                                <button
+                                                    type="submit"
+                                                    className="ui button teal"
+                                                    disabled={review.trim() === ''}
+                                                    onClick={createReview}
+                                                >
+                                                    Submit
+                                                </button>
+                                            </div>
+                                        </Form>
+                                    </Card.Content>
+                                </Card>
+                            }
+                            {reviews.map(review => (
+                                <Card fluid key={review.id}>
+                                    <Card.Content>
+                                        {user && user.username === review.username && <DeleteButton appID={id} reviewID={review.id} callback={deleteAppCallBack} />}
+                                        <Card.Header>
+                                            {review.username}
+                                        </Card.Header>
+                                        <Card.Meta>
+                                            {moment(review.createdAt).fromNow()}
+                                        </Card.Meta>
+                                        <Card.Description>
+                                            {review.body}
+                                        </Card.Description>
+                                    </Card.Content>
+                                </Card>
+                            ))}
+                        </Grid.Column>
+                    </Grid.Row>
+                </Grid>
+            </Container>
         )
     };
 
