@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Button, Modal, Container, Icon, Select } from 'semantic-ui-react'
+import { Form, Button, Modal, Container, Icon } from 'semantic-ui-react'
 import { gql, useMutation } from '@apollo/client';
 
 
