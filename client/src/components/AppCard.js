@@ -8,7 +8,7 @@ import ReactStars from "react-rating-stars-component";
 import { AuthContext } from '../context/auth'
 
 
-export default function AppCard({ app: { id, name, username, body, createdAt, reviewsCount } }) {
+export default function AppCard({ app: { id, name, username, body, createdAt, reviewsCount, category } }) {
     const { user } = useContext(AuthContext);
 
     const ratingChanged = (newRating) => {

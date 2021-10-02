@@ -22,3 +22,7 @@
 .pushable {
   height: 100vh !important;
 }
+
+.submitButton {
+  margin-top: 20px !important;
+}

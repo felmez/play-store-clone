@@ -27,7 +27,7 @@ module.exports = {
         }
     },
     Mutation: {
-        async createApp(_, { body, name }, context) {
+        async createApp(_, { body, name, category }, context) {
             const user = tokenCheck(context);
 
             if (body.trim() === '') {
@@ -51,6 +51,7 @@ module.exports = {
                 username: user.username,
                 body,
                 name,
+                category,
                 createdAt: new Date().toISOString()
             });
 

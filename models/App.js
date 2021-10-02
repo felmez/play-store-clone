@@ -4,6 +4,7 @@ const appSchema = new Schema({
     name: String,
     username: String,
     body: String,
+    category: String,
     createdAt: String,
     reviews: [{
         body: String,

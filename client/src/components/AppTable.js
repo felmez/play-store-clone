@@ -9,7 +9,7 @@ import { AuthContext } from '../context/auth'
 import DeleteButton from '../components/DeleteButton';
 
 
-export default function AppTable({ app: { id, username, name, body, createdAt, reviewsCount, reviews } }) {
+export default function AppTable({ app: { id, username, name, body, createdAt, category, reviewsCount, reviews } }) {
     const { user } = useContext(AuthContext);
 
     const ratingChanged = (newRating) => {
@@ -24,6 +24,7 @@ export default function AppTable({ app: { id, username, name, body, createdAt, r
                     <Table.Row>
                         <Table.HeaderCell>Name</Table.HeaderCell>
                         <Table.HeaderCell>Description</Table.HeaderCell>
+                        <Table.HeaderCell>Category</Table.HeaderCell>
                         <Table.HeaderCell>Reviews</Table.HeaderCell>
                         <Table.HeaderCell>Puplish Date</Table.HeaderCell>
                         <Table.HeaderCell>Actions</Table.HeaderCell>
@@ -38,6 +39,7 @@ export default function AppTable({ app: { id, username, name, body, createdAt, r
                             </Header>
                         </Table.Cell>
                         <Table.Cell>{body}</Table.Cell>
+                        <Table.Cell>{category}</Table.Cell>
                         <Table.Cell>
                             <Rating icon='star' defaultRating={5} maxRating={5} />
                         </Table.Cell>

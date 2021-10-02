@@ -7,6 +7,7 @@ export const FETCH_APPS_QUERY = gql`
             name
             username
             body
+            category
             createdAt
             reviewsCount
             reviews{
