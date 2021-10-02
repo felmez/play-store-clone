@@ -16,7 +16,7 @@ export default function AppCard({ app: { id, name, username, body, createdAt, re
                 </Card.Description>
             </Card.Content>
             <Card.Content extra>
-                <Rating icon='star' defaultRating={3} maxRating={5} /> {reviewsCount}
+                <Rating icon='star' defaultRating={0} maxRating={5} /> {reviewsCount}
             </Card.Content>
         </Card>
     )

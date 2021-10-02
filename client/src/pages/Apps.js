@@ -1,18 +1,18 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useQuery } from '@apollo/client';
 import { Grid, Transition } from 'semantic-ui-react'
 
-import { AuthContext } from '../context/auth'
 import { FETCH_APPS_QUERY } from '../util/GraphQL';
-import AppTable from '../components/AppTable';
+import AppCard from '../components/AppCard'
 
-export default function MyApps() {
+export default function Apps() {
     const { loading, data: { getApps: apps } = {} } = useQuery(FETCH_APPS_QUERY);
 
-    const { user } = useContext(AuthContext);
-
     return (
-        <Grid columns={1}>
+        <Grid columns={6} className="homeContainer">
+            <Grid.Row className="page-title">
+                <h1>Apps</h1>
+            </Grid.Row>
             <Grid.Row>
                 {loading ? (
                     <h1>Loading apps...</h1>
@@ -20,9 +20,9 @@ export default function MyApps() {
                     <Transition.Group>
                         {
                             apps &&
-                            apps.filter(app => app.username === user.username).map(filteredApps => (
+                            apps.filter(app => app.category === "app").map(filteredApps => (
                                 <Grid.Column key={filteredApps.id} style={{ marginBottom: 20 }}>
-                                    <AppTable app={filteredApps} />
+                                    <AppCard app={filteredApps} />
                                 </Grid.Column>
                             ))
                         }

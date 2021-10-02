@@ -67,9 +67,10 @@ export default function AppForm() {
         <Modal
             onClose={() => setOpen(false)}
             onOpen={() => setOpen(true)}
+            onSubmit={() => setOpen(false)}
             open={open}
             trigger={<Button color='teal'>
-                <Icon name='plus' /> Submit App
+                <Icon name='plus' /> Submit
             </Button>}
         >
             <Modal.Header>Create New App</Modal.Header>
