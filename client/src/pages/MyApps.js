@@ -1,14 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useQuery } from '@apollo/client';
-import { Grid, Transition, Container, Table } from 'semantic-ui-react'
+import { Grid, Transition } from 'semantic-ui-react'
 
-import { AuthContext } from '../context/auth';
 import { FETCH_APPS_QUERY } from '../util/GraphQL';
 import AppTable from '../components/AppTable';
 
 export default function Home() {
-    const { user } = useContext(AuthContext);
-
     const { loading, data: { getApps: apps } = {} } = useQuery(FETCH_APPS_QUERY);
 
     return (
