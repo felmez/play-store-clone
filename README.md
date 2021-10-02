@@ -258,7 +258,7 @@ Souhaib Felmez
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [license-shield]: https://img.shields.io/github/license/felmez/play-store-clone.svg?style=flat-square
-[license-url]: https://github.com/felmez/play-store-clone/blob/master/LICENSE.txt
+[license-url]: https://github.com/felmez/play-store-clone/blob/master/LICENSE
 [freecodecamp-shield]: https://img.shields.io/badge/-freecodecamp-black?style=flat-square&logo=freecodecamp
 [freecodecamp-url]: https://www.freecodecamp.org/
 [google-shield]: https://img.shields.io/badge/-google-E34F26?style=flat-square&logo=google
