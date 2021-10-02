@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Button, Modal, Container, Icon } from 'semantic-ui-react'
+import { Form, Button, Modal, Container, Icon, Select } from 'semantic-ui-react'
 import { gql, useMutation } from '@apollo/client';
 
 
@@ -11,12 +11,14 @@ const CREATE_APP_MUTATION = gql`
     mutation createApp(
         $body: String!
         $name: String!
+        $category: String!
     ) {
-        createApp(body: $body, name: $name){
+        createApp(body: $body, name: $name, category: $category){
             id
             name
             username
             body
+            category
             createdAt
             reviewsCount
             reviews{
@@ -33,7 +35,8 @@ export default function AppForm() {
 
     const { onChange, onSubmit, values } = useForm(createAppCallBack, {
         name: '',
-        body: ''
+        body: '',
+        category: ''
     })
 
     const [open, setOpen] = React.useState(false)
@@ -52,6 +55,7 @@ export default function AppForm() {
             });
             values.name = "";
             values.body = "";
+            values.category = "";
         },
     });
 
@@ -71,8 +75,6 @@ export default function AppForm() {
             <Modal.Header>Create New App</Modal.Header>
             <Modal.Content>
                 <Container>
-
-
                     <Form onSubmit={onSubmit}>
                         <Form.Field>
                             <Form.Input
@@ -87,7 +89,13 @@ export default function AppForm() {
                                 onChange={onChange}
                                 value={values.body}
                             />
-                            <Button type="submit" color="teal" disabled={!values.name.trim()}>
+                            <Form.Field name="category" label='Select Category' control='select' value={values.category}
+                                onChange={onChange}>
+                                <option value='app'>App</option>
+                                <option value='movie'>Movie</option>
+                                <option value='book'>Book</option>
+                            </Form.Field>
+                            <Button type="submit" color="teal" className="submitButton" disabled={!values.name.trim()}>
                                 Submit
                             </Button>
                         </Form.Field>
