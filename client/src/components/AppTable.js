@@ -5,7 +5,7 @@ import moment from 'moment'
 import { AuthContext } from '../context/auth'
 import DeleteButton from '../components/DeleteButton';
 
-export default function AppTable({ app: { id, username, name, body, createdAt, category } }) {
+export default function AppTable({ app: { id, username, name, body, createdAt, category, reviewsCount } }) {
     const { user } = useContext(AuthContext);
 
     return (
@@ -21,7 +21,6 @@ export default function AppTable({ app: { id, username, name, body, createdAt, c
                         <Table.HeaderCell>Actions</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
-
                 <Table.Body>
                     <Table.Row>
                         <Table.Cell>
@@ -32,7 +31,7 @@ export default function AppTable({ app: { id, username, name, body, createdAt, c
                         <Table.Cell>{body}</Table.Cell>
                         <Table.Cell>{category}</Table.Cell>
                         <Table.Cell>
-                            <Rating icon='star' defaultRating={3} maxRating={5} />
+                            <Rating icon='star' defaultRating={3} maxRating={5} /> {reviewsCount}
                         </Table.Cell>
                         <Table.Cell>
                             {moment(createdAt).fromNow()}
