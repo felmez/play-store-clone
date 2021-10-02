@@ -284,7 +284,7 @@ Souhaib Felmez
 [heroku-shield]: https://img.shields.io/badge/-Heroku-430098?style=flat-square&logo=heroku
 [heroku-url]: https://dashboard.heroku.com/
 [netlify-shield]: https://img.shields.io/badge/-netlify-black?style=flat-square&logo=netlify
-[netlify-url]: https://dashboard.heroku.com/
+[netlify-url]: https://www.netlify.com/
 [git-shield]: https://img.shields.io/badge/-Git-black?style=flat-square&logo=git
 [git-url]: https://git-scm.com/
 [github-shield]: https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github
