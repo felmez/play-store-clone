@@ -1,21 +1,12 @@
 import React, { useContext } from 'react'
-import { Card, Icon, Image, Table, Header, Rating, Container } from 'semantic-ui-react'
+import { Table, Header, Rating, Container } from 'semantic-ui-react'
 import moment from 'moment'
-import { Link } from 'react-router-dom'
-import ReactStars from "react-rating-stars-component";
-
 
 import { AuthContext } from '../context/auth'
 import DeleteButton from '../components/DeleteButton';
 
-
-export default function AppTable({ app: { id, username, name, body, createdAt, category, reviewsCount, reviews } }) {
+export default function AppTable({ app: { id, username, name, body, createdAt, category } }) {
     const { user } = useContext(AuthContext);
-
-    const ratingChanged = (newRating) => {
-        console.log(newRating);
-    };
-
 
     return (
         <Container>
@@ -41,7 +32,7 @@ export default function AppTable({ app: { id, username, name, body, createdAt, c
                         <Table.Cell>{body}</Table.Cell>
                         <Table.Cell>{category}</Table.Cell>
                         <Table.Cell>
-                            <Rating icon='star' defaultRating={5} maxRating={5} />
+                            <Rating icon='star' defaultRating={3} maxRating={5} />
                         </Table.Cell>
                         <Table.Cell>
                             {moment(createdAt).fromNow()}

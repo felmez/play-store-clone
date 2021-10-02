@@ -85,7 +85,6 @@ export default function SingleApp(props) {
             name,
             username,
             body,
-            reviewsCount,
             reviews,
             createdAt
         } = getApp;
