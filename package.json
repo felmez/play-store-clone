@@ -37,5 +37,6 @@
     "graphql": "^15.5.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.5"
-  }
+  },
+  "proxy": "https://playstorex.herokuapp.com/"
 }
