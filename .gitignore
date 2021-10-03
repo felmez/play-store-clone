@@ -121,3 +121,20 @@ config.js
 *.code-workspace
 .vscode/settings.json
 client/.vscode/settings.json
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
