@@ -121,3 +121,5 @@ config.js
 *.code-workspace
 .vscode/settings.json
 client/.vscode/settings.json
+yarn.lock
+package-lock.json
