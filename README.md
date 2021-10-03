@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
 *** that would make this better, please fork the repo and create a pull request
@@ -291,3 +292,7 @@ Souhaib Felmez
 [github-url]: https://github.com/
 [linkedin-shield]: https://img.shields.io/badge/-felmez-blue?style=flat-square&logo=Linkedin&logoColor=white
 [linkedin-url]: https://linkedin.com/in/felmez
+=======
+# play-store-clone
+Google play store built with MERN stack and GraphQL
+>>>>>>> 959b363f0c7f968b40223a385f77a0345b97f673
