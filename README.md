@@ -99,15 +99,7 @@ With your account, you can submit apps, movies and books or review your or other
 There is also validation on register/login forms where you can't keep input fields empty, can't use a username that already exists, or an email that is already used in another account and your passwords must match each other.
 
 <p align="center">
-    <img src="https://github.com/felmez/play-store-clone/blob/main/readme_assets/00.gif" />
     <br />
-    <img src="https://github.com/felmez/play-store-clone/blob/main/readme_assets/11.gif" />
-    <br />
-    <img src="https://github.com/felmez/play-store-clone/blob/main/readme_assets/22.gif" />
-    <br />
-    <img src="https://github.com/felmez/play-store-clone/blob/main/readme_assets/33.gif" />
-    <br />
-    <img src="https://github.com/felmez/play-store-clone/blob/main/readme_assets/44.gif" />
 </p>
 
 
