@@ -51,7 +51,7 @@
     <a href="#getting-started"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="" target="_blank">View Demo</a>
+    <a href="https://nervous-wilson-703ffa.netlify.app/" target="_blank">View Demo</a>
     ·
     <a href="https://github.com/felmez/play-store-clone/issues">Report Bug</a>
     ·
@@ -121,8 +121,8 @@ There is also validation on register/login forms where you can't keep input fiel
 
 ### Demo
 
-* Client (frontend) link: [![netlify-shield]]()
-* Server (backend) link: [![heroku-shield]]()
+* Client (frontend) link: [![netlify-shield]](https://nervous-wilson-703ffa.netlify.app/)
+* Server (backend) link: [![heroku-shield]](https://playstorex.herokuapp.com/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -261,7 +261,7 @@ Souhaib Felmez
 [license-url]: https://github.com/felmez/play-store-clone/blob/master/LICENSE
 [freecodecamp-shield]: https://img.shields.io/badge/-freecodecamp-black?style=flat-square&logo=freecodecamp
 [freecodecamp-url]: https://www.freecodecamp.org/
-[google-shield]: https://img.shields.io/badge/-google-E34F26?style=flat-square&logo=google
+[google-shield]: https://img.shields.io/badge/google-4285F4?style=for-the-badge&logo=google&logoColor=white
 [google-url]: https://www.google.com/
 [stackoverflow-shield]: https://img.shields.io/badge/-stackoverflow-E34F26?style=flat-square&logo=stackoverflow&logoColor=white
 [stackoverflow-url]: https://www.stackoverflow.com/
