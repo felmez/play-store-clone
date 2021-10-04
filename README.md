@@ -263,7 +263,7 @@ Souhaib Felmez
 [freecodecamp-url]: https://www.freecodecamp.org/
 [google-shield]: https://img.shields.io/badge/google-4285F4?style=for-the-badge&logo=google&logoColor=white
 [google-url]: https://www.google.com/
-[stackoverflow-shield]: https://img.shields.io/badge/-stackoverflow-E34F26?style=flat-square&logo=stackoverflow&logoColor=white
+[stackoverflow-shield]: https://img.shields.io/badge/-stackoverflow-E34F26?style=for-the-badge&logo=stackoverflow&logoColor=white
 [stackoverflow-url]: https://www.stackoverflow.com/
 [html-shield]: https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white
 [html-url]: https://en.wikipedia.org/wiki/HTML
