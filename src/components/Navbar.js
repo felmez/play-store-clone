@@ -40,7 +40,7 @@ function Navbar() {
                     <Dropdown text={user.username}>
                         <Dropdown.Menu>
                             <Dropdown.Item text='MyApps' as={Link} to={`/${user.username}/apps`} />
-                            <Dropdown.Item text='Logout' onClick={logout} />
+                            <Dropdown.Item text='Logout' onClick={logout} as={Link} to={`/`} />
                         </Dropdown.Menu>
                     </Dropdown>
                 </Menu.Item>
