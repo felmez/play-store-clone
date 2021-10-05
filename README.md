@@ -53,6 +53,8 @@
     <br />
     <a href="https://nervous-wilson-703ffa.netlify.app/" target="_blank">View Demo</a>
     ·
+    <a href="https://www.youtube.com/watch?v=JT7X_g2leSI" target="_blank">Demonstration Video</a>
+    ·
     <a href="https://github.com/felmez/play-store-clone/issues">Report Bug</a>
     ·
     <a href="https://github.com/felmez/play-store-clone/issues">Request Feature</a>
