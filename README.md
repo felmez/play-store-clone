@@ -53,6 +53,8 @@
     <br />
     <a href="https://nervous-wilson-703ffa.netlify.app/" target="_blank">View Demo</a>
     ·
+    <a href="https://github.com/felmez/play-store-clone/tree/main/readme_assets">View GIFs</a>
+    ·
     <a href="https://www.youtube.com/watch?v=JT7X_g2leSI" target="_blank">Demonstration Video</a>
     ·
     <a href="https://github.com/felmez/play-store-clone/issues">Report Bug</a>
@@ -65,7 +67,7 @@
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <summary>Table of Contents</summary>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
@@ -99,19 +101,6 @@ This is google play store like app where you can register/login with a user acco
 ) to keep the session alive even when you close the browser or refresh the pages.
 With your account, you can submit apps, movies and books or review your or other user's submitted work. You can also delete only the posts and reviews that you logged with the same user who submitted them.
 There is also validation on register/login forms where you can't keep input fields empty, can't use a username that already exists, or an email that is already used in another account and your passwords must match each other.
-
-<p align="center">
-    <img src="https://github.com/felmez/play-store-clone/blob/main/readme_assets/00.gif" />
-    <br />
-    <img src="https://github.com/felmez/play-store-clone/blob/main/readme_assets/11.gif" />
-    <br />
-    <img src="https://github.com/felmez/play-store-clone/blob/main/readme_assets/22.gif" />
-    <br />
-    <img src="https://github.com/felmez/play-store-clone/blob/main/readme_assets/33.gif" />
-    <br />
-    <img src="https://github.com/felmez/play-store-clone/blob/main/readme_assets/44.gif" />
-</p>
-
 
 ### Built With
 
