@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useQuery } from '@apollo/client';
-import { Grid, Transition } from 'semantic-ui-react'
+import { Grid, Table } from 'semantic-ui-react'
 
 import { AuthContext } from '../context/auth'
 import { FETCH_APPS_QUERY } from '../util/GraphQL';
@@ -12,23 +12,33 @@ export default function MyApps() {
     const { user } = useContext(AuthContext);
 
     return (
-        <Grid columns={1}>
-            <Grid.Row>
+        <Grid columns={4}>
+            <Grid.Column>
+            </Grid.Column>
+            <Grid.Column>
                 {loading ? (
                     <h1>Loading apps...</h1>
                 ) : (
-                    <Transition.Group>
+                    <Table singleLine>
+                        <Table.Header>
+                            <Table.Row>
+                                <Table.HeaderCell>Name</Table.HeaderCell>
+                                <Table.HeaderCell>Description</Table.HeaderCell>
+                                <Table.HeaderCell>Category</Table.HeaderCell>
+                                <Table.HeaderCell>Reviews</Table.HeaderCell>
+                                <Table.HeaderCell>Puplish Date</Table.HeaderCell>
+                                <Table.HeaderCell>Actions</Table.HeaderCell>
+                            </Table.Row>
+                        </Table.Header>
                         {
                             apps &&
                             apps.filter(app => app.username === user.username).map(filteredApps => (
-                                <Grid.Column key={filteredApps.id} style={{ marginBottom: 20 }}>
-                                    <AppTable app={filteredApps} />
-                                </Grid.Column>
+                                <AppTable app={filteredApps} />
                             ))
                         }
-                    </Transition.Group>
+                    </Table>
                 )}
-            </Grid.Row>
+            </Grid.Column>
         </Grid>
     )
 }
